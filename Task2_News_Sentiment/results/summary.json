@@ -1,15 +1,13 @@
 {
   "total": 30,
-  "positive": 10,
-  "negative": 2,
-  "neutral": 18,
-  "positive_probability_sum": 11.8144,
-  "negative_probability_sum": 2.9574,
-  "neutral_probability_sum": 15.2282,
-  "sentiment_index": 0.2952,
-  "average_positive": 0.3938,
-  "average_negative": 0.0986,
-  "average_neutral": 0.5076,
-  "outlook": "GOOD DAY FOR BUSINESS AND STOCK TRADING",
-  "outlook_class": "good"
+  "positive": 7,
+  "negative": 11,
+  "neutral": 12,
+  "positive_probability_sum": 9.4816,
+  "negative_probability_sum": 9.3766,
+  "neutral_probability_sum": 11.1418,
+  "sentiment_index": 0.0035,
+  "outlook": "MIXED / UNCERTAIN BUSINESS AND TRADING OUTLOOK",
+  "outlook_class": "mixed",
+  "fetched_at": "2026-08-30T18:47:50.655729+00:00"
 }
