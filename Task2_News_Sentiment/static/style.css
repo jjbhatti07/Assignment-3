@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7fb; color: #101828; }
+.container { max-width: 1250px; margin: 0 auto; padding: 42px 24px 60px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 800; color: #667085; }
+h1 { margin: 8px 0; font-size: clamp(30px, 5vw, 48px); }
+h2 { margin: 0; }
+.muted { color: #667085; }
+.outlook { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px; margin: 30px 0 18px; border-radius: 18px; border: 1px solid #e4e7ec; background: white; }
+.outlook.good { border-left: 7px solid #12b76a; }
+.outlook.bad { border-left: 7px solid #f04438; }
+.outlook.mixed { border-left: 7px solid #f79009; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #667085; font-weight: 800; margin-bottom: 8px; }
+.score { font-size: 38px; font-weight: 900; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.card, .table-card { background: white; border: 1px solid #e4e7ec; border-radius: 16px; }
+.card { padding: 20px; }
+.card span { display: block; color: #667085; font-size: 13px; }
+.card strong { display: block; font-size: 32px; margin-top: 7px; }
+.table-card { padding: 20px; }
+.table-wrap { overflow-x: auto; margin-top: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 12px 10px; border-bottom: 1px solid #eaecf0; text-align: left; vertical-align: top; }
+th { color: #667085; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+a { color: inherit; }
+.pill { display: inline-block; border-radius: 999px; padding: 4px 9px; font-size: 11px; font-weight: 800; }
+.positive { background: #ecfdf3; color: #027a48; }
+.negative { background: #fef3f2; color: #b42318; }
+.neutral { background: #f2f4f7; color: #475467; }
+footer { margin-top: 18px; color: #667085; font-size: 12px; }
+@media (max-width: 800px) { .stats { grid-template-columns: repeat(2, 1fr); } .outlook { align-items: flex-start; } }

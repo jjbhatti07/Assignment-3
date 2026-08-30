@@ -1,0 +1,15 @@
+{
+  "total": 30,
+  "positive": 9,
+  "negative": 5,
+  "neutral": 16,
+  "positive_probability_sum": 10.6877,
+  "negative_probability_sum": 4.8637,
+  "neutral_probability_sum": 14.449,
+  "sentiment_index": 0.1941,
+  "average_positive": 0.3563,
+  "average_negative": 0.1621,
+  "average_neutral": 0.4816,
+  "outlook": "GOOD DAY FOR BUSINESS AND STOCK TRADING",
+  "outlook_class": "good"
+}

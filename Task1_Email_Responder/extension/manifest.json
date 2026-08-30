@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail AI Email Responder",
+  "version": "1.1.0",
+  "description": "Captures an opened Gmail email and generates an AI-suggested reply.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://127.0.0.1:5002/*",
+    "http://localhost:5002/*",
+    "https://*.onrender.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Gmail AI Responder",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

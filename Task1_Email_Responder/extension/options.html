@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gmail AI Responder Settings</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+    label { display: block; margin-top: 18px; font-weight: 600; }
+    input { width: 100%; box-sizing: border-box; padding: 10px; margin-top: 6px; }
+    button { margin-top: 20px; padding: 10px 16px; cursor: pointer; }
+    #saved { margin-top: 12px; color: #137333; }
+    .note { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Gmail AI Responder</h1>
+  <p class="note">Set the URL of your remotely hosted Flask service. Keep your Hugging Face token only on the server.</p>
+  <label for="apiUrl">Remote API URL</label>
+  <input id="apiUrl" placeholder="https://your-service.onrender.com">
+  <button id="save">Save</button>
+  <div id="saved"></div>
+  <script src="options.js"></script>
+</body>
+</html>

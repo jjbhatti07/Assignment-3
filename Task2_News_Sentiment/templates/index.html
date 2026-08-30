@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pakistan Business News Sentiment</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">Hugging Face • Assignment 02 • Task 2</p>
+      <h1>Business News Sentiment Dashboard</h1>
+      <p class="muted">30 latest business-news articles from The Express Tribune and Profit Pakistan Today.</p>
+    </header>
+
+    <section class="outlook {{ summary.outlook_class }}">
+      <div>
+        <div class="label">Overall outlook</div>
+        <h2>{{ summary.outlook }}</h2>
+      </div>
+      <div class="score">{{ summary.sentiment_index }}</div>
+    </section>
+
+    <section class="stats">
+      <div class="card"><span>Total</span><strong>{{ summary.total }}</strong></div>
+      <div class="card"><span>Positive</span><strong>{{ summary.positive }}</strong></div>
+      <div class="card"><span>Neutral</span><strong>{{ summary.neutral }}</strong></div>
+      <div class="card"><span>Negative</span><strong>{{ summary.negative }}</strong></div>
+    </section>
+
+    <section class="table-card">
+      <h2>Article-level analysis</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Source</th><th>Headline</th><th>Sentiment</th><th>Confidence</th><th>Published</th></tr></thead>
+          <tbody>
+          {% for row in rows %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ row.source }}</td>
+              <td><a href="{{ row.url }}" target="_blank" rel="noreferrer">{{ row.title }}</a></td>
+              <td><span class="pill {{ row.label|lower }}">{{ row.label }}</span></td>
+              <td>{{ '%.2f'|format((row.score|float) * 100) }}%</td>
+              <td>{{ row.published }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Sentiment is an academic NLP signal, not financial advice. The conclusion rule is implemented in <code>app/sentiment.py</code>.
+    </footer>
+  </main>
+</body>
+</html>
