@@ -1,159 +1,70 @@
+from __future__ import annotations
 
 import csv
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .scraper import scrape_30
 from .sentiment import FinancialSentiment, summarize
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
-RESULTS_DIR = BASE_DIR / "results"
+ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT / "data"
+RESULTS_DIR = ROOT / "results"
 
-RAW_FILE = DATA_DIR / "news_raw.json"
-CSV_FILE = RESULTS_DIR / "sentiment_results.csv"
-SUMMARY_FILE = RESULTS_DIR / "summary.json"
+DATA_DIR.mkdir(exist_ok=True)
+RESULTS_DIR.mkdir(exist_ok=True)
 
 
-def run():
-    """
-    Complete Task 2 pipeline:
+def run() -> dict:
+    fetched_at = datetime.now(timezone.utc).isoformat()
 
-    1. Scrape 30 current business news articles.
-    2. Run financial sentiment analysis.
-    3. Save raw news.
-    4. Save article-level sentiment results.
-    5. Save overall summary.
-    """
-
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    print("=" * 70)
-    print("BUSINESS NEWS SENTIMENT ANALYSIS")
-    print("=" * 70)
-
-    # ---------------------------------------------------------
-    # STEP 1: SCRAPE 30 NEWS ARTICLES
-    # ---------------------------------------------------------
-    print("\n[1/3] Collecting 30 latest business news articles...\n")
-
+    print("[1/3] Collecting 30 latest business news articles...")
     items = scrape_30()
 
-    if len(items) != 30:
-        raise RuntimeError(
-            f"Expected 30 articles but received {len(items)}."
-        )
+    print(f"Successfully collected {len(items)} articles.")
 
-    print(f"\nSuccessfully collected {len(items)} articles.")
-
-    # Save raw scraped news.
-    raw_data = []
-
-    for item in items:
-        raw_data.append(
-            {
-                "source": item.source,
-                "title": item.title,
-                "url": item.url,
-                "published": item.published,
-                "content": item.content,
-            }
-        )
-
-    RAW_FILE.write_text(
-        json.dumps(raw_data, indent=2, ensure_ascii=False),
+    (DATA_DIR / "news_raw.json").write_text(
+        json.dumps(
+            [x.to_dict() for x in items],
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
-    # ---------------------------------------------------------
-    # STEP 2: SENTIMENT ANALYSIS
-    # ---------------------------------------------------------
-    print("\n[2/3] Running financial sentiment analysis...\n")
-
+    print("\n[2/3] Running financial sentiment analysis...")
     engine = FinancialSentiment()
     results = engine.analyze(items)
 
-    if len(results) != 30:
-        raise RuntimeError(
-            f"Expected 30 sentiment results but received {len(results)}."
-        )
+    print("\n[3/3] Saving results...")
 
-    # ---------------------------------------------------------
-    # STEP 3: SAVE RESULTS
-    # ---------------------------------------------------------
-    print("\n[3/3] Saving results...\n")
+    summary = summarize(results)
+    summary["fetched_at"] = fetched_at
 
-    # Our sentiment analyzer returns dictionaries directly,
-    # so we write them directly to CSV.
-    fieldnames = [
-        "source",
-        "title",
-        "url",
-        "published",
-        "sentiment",
-        "confidence",
-        "positive_score",
-        "negative_score",
-        "neutral_score",
-        "chunks_analyzed",
-    ]
+    csv_path = RESULTS_DIR / "sentiment_results.csv"
 
-    with CSV_FILE.open(
-        "w",
-        newline="",
-        encoding="utf-8",
-    ) as f:
+    with csv_path.open("w", newline="", encoding="utf-8") as f:
+        fieldnames = list(results[0].to_dict().keys())
+
         writer = csv.DictWriter(
             f,
             fieldnames=fieldnames,
-            extrasaction="ignore",
         )
 
         writer.writeheader()
-        writer.writerows(results)
 
-    # Create overall summary.
-    summary = summarize(results)
+        for row in results:
+            writer.writerow(row.to_dict())
 
-    SUMMARY_FILE.write_text(
-        json.dumps(summary, indent=2, ensure_ascii=False),
+    (RESULTS_DIR / "summary.json").write_text(
+        json.dumps(
+            summary,
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
-    # ---------------------------------------------------------
-    # DISPLAY FINAL RESULT
-    # ---------------------------------------------------------
-    print("=" * 70)
-    print("ANALYSIS COMPLETE")
-    print("=" * 70)
-
-    print(f"Total articles : {summary['total']}")
-    print(f"Positive       : {summary['positive']}")
-    print(f"Negative       : {summary['negative']}")
-    print(f"Neutral        : {summary['neutral']}")
-
-    print(
-        f"Sentiment index: "
-        f"{summary['sentiment_index']}"
-    )
-
-    print(
-        "\nOVERALL BUSINESS / TRADING OUTLOOK:"
-    )
-
-    print(
-        summary["outlook"]
-    )
-
-    print("\nFiles created:")
-
-    print(f"Raw news      : {RAW_FILE}")
-    print(f"Sentiment CSV : {CSV_FILE}")
-    print(f"Summary       : {SUMMARY_FILE}")
-
-    print("=" * 70)
-
     return summary
-
