@@ -1,15 +1,15 @@
 source,title,url,published,sentiment,confidence,positive_score,negative_score,neutral_score,chunks_analyzed
-Express Tribune,10 firms prequalify for Fesco bidding,https://tribune.com.pk/story/2626324/10-firms-prequalify-for-fesco-bidding,2026-08-29T10:10:15+05:00,neutral,0.7834,0.0707,0.146,0.7834,6
-Express Tribune,Govt to probe termination of BIT with Sweden,https://tribune.com.pk/story/2626327/govt-to-probe-termination-of-bit-with-sweden,2026-08-29T10:12:51+05:00,neutral,0.6404,0.0546,0.305,0.6404,4
-Express Tribune,Gold steady as Fed hints at rate hike,https://tribune.com.pk/story/2626325/gold-steady-as-fed-hints-at-rate-hike,2026-08-29T10:11:36+05:00,positive,0.5211,0.5211,0.4355,0.0434,3
-Express Tribune,Deportations expose Gulf job reliance,https://tribune.com.pk/story/2626329/deportations-expose-gulf-job-reliance,2026-08-29T10:14:10+05:00,negative,0.8005,0.0235,0.8005,0.176,7
-Express Tribune,Rs450b ML-1 upgrade faces financing hurdle,https://tribune.com.pk/story/2626331/rs450b-ml-1-upgrade-faces-financing-hurdle,2026-08-29T10:15:21+05:00,neutral,0.7215,0.2532,0.0253,0.7215,2
+Express Tribune,Retailers on tax net jump 31%,https://tribune.com.pk/story/2626437/retailers-on-tax-net-jump-31,2026-08-30T09:44:02+05:00,neutral,0.4562,0.3827,0.1611,0.4562,6
+Express Tribune,New policies to promote local manufacturing,https://tribune.com.pk/story/2626440/new-policies-to-promote-local-manufacturing,2026-08-30T09:44:40+05:00,neutral,0.5447,0.4145,0.0408,0.5447,4
+Express Tribune,Meeting reviews Asaan Tax Scheme application,https://tribune.com.pk/story/2626443/meeting-reviews-asaan-tax-scheme-application,2026-08-30T09:45:40+05:00,neutral,0.8988,0.0783,0.0229,0.8988,3
+Express Tribune,Energy policy predictability sought,https://tribune.com.pk/story/2626438/energy-policy-predictability-sought,2026-08-30T09:46:32+05:00,positive,0.5213,0.5213,0.0195,0.4592,3
+Express Tribune,Semiconductor training programme launched,https://tribune.com.pk/story/2626439/semiconductor-training-programme-launched,2026-08-30T09:47:11+05:00,neutral,0.6425,0.3445,0.0129,0.6425,2
+Express Tribune,'Seafood exports could reach $2b',https://tribune.com.pk/story/2626441/seafood-exports-could-reach-2b,2026-08-30T09:47:45+05:00,neutral,0.4937,0.47,0.0363,0.4937,2
+Express Tribune,PSX registers modest growth,https://tribune.com.pk/story/2626442/psx-registers-modest-growth,2026-08-30T09:48:13+05:00,positive,0.3774,0.3774,0.3679,0.2547,5
+Express Tribune,Uganda invites Pakistani investors with 10-year tax holiday,https://tribune.com.pk/story/2626444/uganda-invites-pakistani-investors-with-10-year-tax-holiday,2026-08-30T09:48:44+05:00,neutral,0.5499,0.4351,0.015,0.5499,3
 Express Tribune,"PSX edges up, stalls below 178,000",https://tribune.com.pk/story/2626332/psx-edges-up-stalls-below-178000,2026-08-29T10:15:49+05:00,neutral,0.416,0.2592,0.3248,0.416,4
-Express Tribune,Short-term inflation sticky at 9.04%,https://tribune.com.pk/story/2626330/short-term-inflation-sticky-at-904,2026-08-29T10:14:42+05:00,negative,0.5184,0.4065,0.5184,0.0752,3
-Express Tribune,Exporters assured of no harassment,https://tribune.com.pk/story/2626328/exporters-assured-of-no-harassment,2026-08-29T10:13:19+05:00,neutral,0.8827,0.0906,0.0267,0.8827,2
-Express Tribune,Stocks close flat on profit-taking,https://tribune.com.pk/story/2626133/stocks-close-flat-on-profit-taking-1,2026-08-28T10:11:31+05:00,negative,0.7273,0.0276,0.7273,0.2452,4
-Express Tribune,Direct flights top trade agenda with Nepal,https://tribune.com.pk/story/2626131/direct-flights-top-trade-agenda-with-nepal,2026-08-28T10:10:23+05:00,neutral,0.4884,0.4762,0.0354,0.4884,3
-Express Tribune,ADB okays $400m regional border plan,https://tribune.com.pk/story/2626129/adb-okays-400m-regional-border-plan,2026-08-28T10:09:13+05:00,neutral,0.5017,0.4585,0.0398,0.5017,2
+Express Tribune,SCCI sends third trade mission in one month,https://tribune.com.pk/story/2626446/scci-sends-third-trade-mission-in-one-month,2026-08-30T09:50:19+05:00,neutral,0.5284,0.4368,0.0348,0.5284,2
+Express Tribune,Temasek backs SIA's Air India bet,https://tribune.com.pk/story/2626445/temasek-backs-sias-air-india-bet,2026-08-30T09:49:24+05:00,neutral,0.509,0.0486,0.4424,0.509,4
 Express Tribune,Sindh seeks Hidan Block rights,https://tribune.com.pk/story/2626326/sindh-seeks-hidan-block-rights,2026-08-29T10:12:08+05:00,neutral,0.6104,0.3632,0.0264,0.6104,3
 Express Tribune,Govt pledges energy sector modernisation,https://tribune.com.pk/story/2626333/govt-pledges-energy-sector-modernisation,2026-08-29T10:16:26+05:00,positive,0.7467,0.7467,0.0093,0.244,2
 Express Tribune,MPs warn against long-term energy contracts,https://tribune.com.pk/story/2626132/mps-warn-against-long-term-energy-contracts,2026-08-28T10:10:52+05:00,neutral,0.7457,0.2349,0.0194,0.7457,4
